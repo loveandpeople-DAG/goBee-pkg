@@ -1,0 +1,20 @@
+version: '3'
+services:
+  lp-node:
+    hostname: lp-node
+    container_name: lp-node
+    image: chainking/lp_node:latest
+    restart: always
+    # Best performance via host network:
+    network_mode: host
+    volumes:
+      - $HOME/lp/lpdb:/app/lpdb
+      - $HOME/lp/hornet:/app/hornet
+      - $HOME/lp/config.json:/app/config.json
+      - $HOME/lp/peering.json:/app/peering.json
+      - $HOME/lp/snapshotMainnet.txt:/app/snapshotMainnet.txt
+    ports:
+      - "14265:14265"
+      - "15600:15600"
+      - "8081:8081"
+

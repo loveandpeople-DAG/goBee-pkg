@@ -1,0 +1,8 @@
+### IDE
+.idea
+
+### mac
+.DS_Store
+
+### db
+lpdb
